@@ -1,3 +1,5 @@
+import { User } from "./components/AppContext"
+
 const conta = {
     email: 'nath@dio.bank',
     password: '123456',

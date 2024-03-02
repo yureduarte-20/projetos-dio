@@ -1,20 +1,24 @@
 import { Text } from "@chakra-ui/react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { Card } from '../components/Card'
+import { getAllLocalStorage } from "../services/storage"
+const ContaInfo = () => {
 
-const ContaInfo = () => { 
+    const user = JSON.parse(getAllLocalStorage() ?? '{}')
     return (
         <>
-            <Text fontSize='3xl' fontWeight='bold'>
-                Informações da conta
-            </Text>
-            <Link to='/conta/1'>
-                <Text fontSize='xl'>
-                    Conta
+            <Card>
+
+                <Text fontSize='3xl' fontWeight='bold'>
+                    Nome: {user.name}
                 </Text>
-            </Link>
-            <a href='/conta/1'>
-                Link com tag a
-            </a>
+                <Link to='/conta/1'>
+                    <Text fontSize='xl'>
+                        Email: {user.email}
+                    </Text>
+                </Link>
+            </Card>
         </>
     )
 }

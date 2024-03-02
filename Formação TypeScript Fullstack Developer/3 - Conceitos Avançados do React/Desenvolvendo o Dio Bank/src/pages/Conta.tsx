@@ -1,10 +1,10 @@
-import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
+import { Button, Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useParams, useNavigate } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { api } from "../api"
 import CardInfo from "../components/CardInfo"
 import { AppContext } from "../components/AppContext"
-
+import DButton from "../components/DButton";
 interface UserData {
     email: string
     password: string
@@ -51,6 +51,7 @@ const Conta = () => {
                         <>
                             <CardInfo mainContent={`Bem vinda ${userData?.name}`} content={`${actualData.getDay()} / ${actualData.getMonth()} / ${actualData.getFullYear()} ${actualData.getHours()}:${actualData.getMinutes()}`} />
                             <CardInfo mainContent='Saldo' content={`R$ ${userData.balance}`}/>
+                            <Button  onClick={() => navigate('/infoconta')} >Acessar dados conta</Button>
                         </>
                     )
                 }

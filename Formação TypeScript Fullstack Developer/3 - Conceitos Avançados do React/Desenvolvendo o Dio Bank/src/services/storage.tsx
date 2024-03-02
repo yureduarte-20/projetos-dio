@@ -1,5 +1,6 @@
-interface IDIoBank {
-    login: boolean;
+import {  User } from '../components/AppContext'
+interface IDIoBank extends Partial<User> {
+    login?: boolean;
 }
 
 const dioBank = {
